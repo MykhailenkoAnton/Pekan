@@ -1,0 +1,3 @@
+[submodule "Pekan/vendor/spdlog"]
+	path = Pekan/vendor/spdlog
+	url = https://github.com/gabime/spdlog
