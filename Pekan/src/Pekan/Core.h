@@ -9,3 +9,5 @@
 #else
 	#error Pekan only support Windows!
 #endif //PK_PLARFORM_WINDOWS
+
+#define BIT(x) (1 << x)

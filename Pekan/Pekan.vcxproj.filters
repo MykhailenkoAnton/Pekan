@@ -4,6 +4,9 @@
     <Filter Include="Pekan">
       <UniqueIdentifier>{D4DEDF0D-40F3-07BF-0975-AB1E754804F0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pekan\Events">
+      <UniqueIdentifier>{38149465-2477-230A-CDFC-5BC0B93EEF8C}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pekan.h" />
@@ -15,6 +18,12 @@
     </ClInclude>
     <ClInclude Include="src\Pekan\EntryPoint.h">
       <Filter>Pekan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pekan\Events\Event.h">
+      <Filter>Pekan\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pekan\Events\KeyEvent.h">
+      <Filter>Pekan\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Pekan\Log.h">
       <Filter>Pekan</Filter>

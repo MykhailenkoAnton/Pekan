@@ -2,7 +2,10 @@
 
 #include <memory>
 #include "Core.h"
+#include "EventFormat.h"
 #include "spdlog/spdlog.h"
+//#include "spdlog/fmt/ostr.h"
+
 
 namespace Pekan {
 
