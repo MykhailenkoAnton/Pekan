@@ -156,7 +156,6 @@ copy /B /Y ..\bin\Dist-windows-x86_64\Pekan\Pekan.dll ..\bin\Dist-windows-x86_64
     <ClInclude Include="src\Pekan\Application.h" />
     <ClInclude Include="src\Pekan\Core.h" />
     <ClInclude Include="src\Pekan\EntryPoint.h" />
-    <ClInclude Include="src\Pekan\EventFormat.h" />
     <ClInclude Include="src\Pekan\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Pekan\Events\Event.h" />
     <ClInclude Include="src\Pekan\Events\KeyEvent.h" />
