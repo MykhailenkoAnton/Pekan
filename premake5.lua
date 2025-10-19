@@ -25,6 +25,9 @@ project "Pekan"
 		"%{prj.name}/src/**.cpp",
 	}
 
+	pchheader "pkpch.h"
+	pchsource "Pekan/src/pkpch.cpp"
+
 	includedirs
 	{
 		"%{prj.name}/src",

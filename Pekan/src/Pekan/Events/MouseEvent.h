@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Pekan {
 
 	class PEKAN_API MouseMovedEvent : public Event

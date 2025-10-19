@@ -1,7 +1,5 @@
 #pragma once
 #include "Pekan/Core.h"
-#include <string>
-#include <functional>
 
 namespace Pekan {
 	
