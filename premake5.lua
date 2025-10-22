@@ -45,7 +45,6 @@ project "Pekan"
 	{
 		"GLFW",
 		"opengl32.lib",
-		--"glfw3.lib"
 	}
 
 	filter "system:windows"
