@@ -11,6 +11,12 @@ workspace "Pekan"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Includer dirs relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Pekan/vendor/GLFW/include"
+
+include "Pekan/vendor/GLFW/"
+
 project "Pekan"
 	location "Pekan"
 	kind "SharedLib"
@@ -32,6 +38,14 @@ project "Pekan"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}",
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib",
+		--"glfw3.lib"
 	}
 
 	filter "system:windows"
@@ -42,7 +56,8 @@ project "Pekan"
 		defines
 		{
 			"PK_PLARFORM_WINDOWS",
-			"PK_BUILD_DLL"
+			"PK_BUILD_DLL",
+			"PK_ENABLE_ASSERTS"
 		}
 
 		postbuildcommands
@@ -55,6 +70,7 @@ project "Pekan"
 	filter "configurations:Debug"
 		defines "PK_DEBUG"
 		symbols "On"
+		buildoptions { "/MTd" }
 
 	filter "configurations:Release"
 		defines "PK_RELEASE"
@@ -101,12 +117,14 @@ project "Sandbox"
 
 		defines
 		{
-			"PK_PLARFORM_WINDOWS"
+			"PK_PLARFORM_WINDOWS",
+			"PK_ENABLE_ASSERTS"
 		}
 
 	filter "configurations:Debug"
 		defines "PK_DEBUG"
 		symbols "On"
+		buildoptions { "/MTd" }
 
 	filter "configurations:Release"
 		defines "PK_RELEASE"
@@ -117,4 +135,4 @@ project "Sandbox"
 		optimize "On"
 
 	filter "system:windows"
-		buildoptions { "/utf-8" }
+		buildoptions { "/utf-8", "/MT" }

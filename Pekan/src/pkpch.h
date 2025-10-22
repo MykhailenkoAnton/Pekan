@@ -7,13 +7,14 @@
 #include <functional>
 
 
-
 #include <vector>
 #include <string>
 #include <sstream>
 #include <unordered_map>
 #include <unordered_set>
 
+
+#include "Pekan/Log.h"
 
 #ifdef PK_PLARFORM_WINDOWS
 	#include "Windows.h"

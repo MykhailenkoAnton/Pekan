@@ -1,3 +1,6 @@
 [submodule "Pekan/vendor/spdlog"]
 	path = Pekan/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Pekan/vendor/GLFW"]
+	path = Pekan/vendor/GLFW
+	url = https://github.com/MykhailenkoAnton/glfw
