@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Pekan/Events/ApplicationEvent.h"
 #include "Window.h"
 
 namespace Pekan {
@@ -13,6 +14,11 @@ namespace Pekan {
 		virtual ~Application();
 
 		void Run();
+		void OnEvent(Event& e);
+
+	private:
+
+		bool OnWindowCloseEvent(WindowCloseEvent& e);
 
 	private:
 		std::unique_ptr<Window> m_Window;
