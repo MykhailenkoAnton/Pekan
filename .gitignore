@@ -2,6 +2,8 @@
 **/bin-int/
 Intermediates/
 
+imgui.ini
+
 *.log
 
 # Visual Studio files and folder

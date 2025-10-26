@@ -4,3 +4,6 @@
 [submodule "Pekan/vendor/GLFW"]
 	path = Pekan/vendor/GLFW
 	url = https://github.com/MykhailenkoAnton/glfw
+[submodule "Pekan/vendor/imgui"]
+	path = Pekan/vendor/imgui
+	url = https://github.com/MykhailenkoAnton/imgui

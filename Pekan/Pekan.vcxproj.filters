@@ -7,8 +7,14 @@
     <Filter Include="Pekan\Events">
       <UniqueIdentifier>{38149465-2477-230A-CDFC-5BC0B93EEF8C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pekan\ImGui">
+      <UniqueIdentifier>{FE2211EC-6AD8-89E1-F3CC-83B85F8180E5}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -37,6 +43,9 @@
     <ClInclude Include="src\Pekan\Events\MouseEvent.h">
       <Filter>Pekan\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Pekan\ImGui\ImGuiLayer.h">
+      <Filter>Pekan\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Pekan\Layer.h">
       <Filter>Pekan</Filter>
     </ClInclude>
@@ -49,6 +58,12 @@
     <ClInclude Include="src\Pekan\Window.h">
       <Filter>Pekan</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLLoader.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -58,6 +73,9 @@
     <ClCompile Include="src\Pekan\Application.cpp">
       <Filter>Pekan</Filter>
     </ClCompile>
+    <ClCompile Include="src\Pekan\ImGui\ImGuiLayer.cpp">
+      <Filter>Pekan\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Pekan\Layer.cpp">
       <Filter>Pekan</Filter>
     </ClCompile>
@@ -66,6 +84,9 @@
     </ClCompile>
     <ClCompile Include="src\Pekan\Log.cpp">
       <Filter>Pekan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>

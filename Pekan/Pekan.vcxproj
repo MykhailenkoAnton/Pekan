@@ -79,8 +79,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pkpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>PK_PLARFORM_WINDOWS;PK_BUILD_DLL;PK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;PK_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>PK_PLARFORM_WINDOWS;PK_BUILD_DLL;PK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;PK_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -104,8 +104,8 @@ copy /B /Y ..\bin\Debug-windows-x86_64\Pekan\Pekan.dll ..\bin\Debug-windows-x86_
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pkpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>PK_PLARFORM_WINDOWS;PK_BUILD_DLL;PK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;PK_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>PK_PLARFORM_WINDOWS;PK_BUILD_DLL;PK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;PK_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -133,8 +133,8 @@ copy /B /Y ..\bin\Release-windows-x86_64\Pekan\Pekan.dll ..\bin\Release-windows-
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pkpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>PK_PLARFORM_WINDOWS;PK_BUILD_DLL;PK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;PK_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>PK_PLARFORM_WINDOWS;PK_BUILD_DLL;PK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;PK_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -166,18 +166,23 @@ copy /B /Y ..\bin\Dist-windows-x86_64\Pekan\Pekan.dll ..\bin\Dist-windows-x86_64
     <ClInclude Include="src\Pekan\Events\Event.h" />
     <ClInclude Include="src\Pekan\Events\KeyEvent.h" />
     <ClInclude Include="src\Pekan\Events\MouseEvent.h" />
+    <ClInclude Include="src\Pekan\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Pekan\Layer.h" />
     <ClInclude Include="src\Pekan\LayerStack.h" />
     <ClInclude Include="src\Pekan\Log.h" />
     <ClInclude Include="src\Pekan\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLLoader.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\pkpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pekan\Application.cpp" />
+    <ClCompile Include="src\Pekan\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Pekan\Layer.cpp" />
     <ClCompile Include="src\Pekan\LayerStack.cpp" />
     <ClCompile Include="src\Pekan\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\pkpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
@@ -189,6 +194,9 @@ copy /B /Y ..\bin\Dist-windows-x86_64\Pekan\Pekan.dll ..\bin\Dist-windows-x86_64
     </ProjectReference>
     <ProjectReference Include="vendor\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

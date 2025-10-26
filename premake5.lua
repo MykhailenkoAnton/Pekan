@@ -15,9 +15,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Pekan/vendor/GLFW/include"
 IncludeDir["Glad"] = "Pekan/vendor/Glad/include"
+IncludeDir["ImGui"] = "Pekan/vendor/imgui"
 
 include "Pekan/vendor/GLFW/"
 include "Pekan/vendor/Glad/"
+include "Pekan/vendor/imgui/"
 
 project "Pekan"
 	location "Pekan"
@@ -42,12 +44,14 @@ project "Pekan"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}",
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"opengl32.lib",
 	}
 
@@ -61,7 +65,8 @@ project "Pekan"
 			"PK_PLARFORM_WINDOWS",
 			"PK_BUILD_DLL",
 			"PK_ENABLE_ASSERTS",
-			"GLFW_INCLUDE_NONE"
+			"GLFW_INCLUDE_NONE",
+			"IMGUI_IMPL_OPENGL_LOADER_CUSTOM"
 		}
 
 		postbuildcommands
