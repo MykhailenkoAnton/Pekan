@@ -49,7 +49,7 @@ project "Pekan"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off" --temp fix for CRT dependency
 		systemversion "latest"
 
 		defines
@@ -69,7 +69,7 @@ project "Pekan"
 	filter "configurations:Debug"
 		defines "PK_DEBUG"
 		symbols "On"
-		buildoptions { "/MTd" }
+		--buildoptions { "/MDd" } --temp fix for CRT dependency
 
 	filter "configurations:Release"
 		defines "PK_RELEASE"
@@ -111,7 +111,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off" --temp fix for CRT dependency
 		
 
 		defines
@@ -123,7 +123,7 @@ project "Sandbox"
 	filter "configurations:Debug"
 		defines "PK_DEBUG"
 		symbols "On"
-		buildoptions { "/MTd" }
+		--buildoptions { "/MDd" } --temp fix for CRT dependency
 
 	filter "configurations:Release"
 		defines "PK_RELEASE"
@@ -134,4 +134,4 @@ project "Sandbox"
 		optimize "On"
 
 	filter "system:windows"
-		buildoptions { "/utf-8", "/MT" }
+		buildoptions { "/utf-8" }

@@ -37,6 +37,12 @@
     <ClInclude Include="src\Pekan\Events\MouseEvent.h">
       <Filter>Pekan\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Pekan\Layer.h">
+      <Filter>Pekan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pekan\LayerStack.h">
+      <Filter>Pekan</Filter>
+    </ClInclude>
     <ClInclude Include="src\Pekan\Log.h">
       <Filter>Pekan</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pekan\Application.cpp">
+      <Filter>Pekan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pekan\Layer.cpp">
+      <Filter>Pekan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pekan\LayerStack.cpp">
       <Filter>Pekan</Filter>
     </ClCompile>
     <ClCompile Include="src\Pekan\Log.cpp">

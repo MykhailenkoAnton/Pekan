@@ -32,7 +32,7 @@ namespace Pekan {
 
 	class PEKAN_API Event
 	{
-		friend class EventDispatcher;
+		//friend class EventDispatcher; // No needed now
 	public:
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
@@ -43,8 +43,9 @@ namespace Pekan {
 		{
 			return GetCategoryFlags() & category;
 		}
-	protected:
-		bool m_Handled = false;
+
+	public:
+		bool Handled = false;
 	};
 
 	class EventDispatcher
@@ -62,7 +63,7 @@ namespace Pekan {
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func(*(T*)&m_Event); // func(static_cast<T&>(m_Event));
+				m_Event.Handled = func(*(T*)&m_Event); // func(static_cast<T&>(m_Event));
 				return true;
 			}
 
