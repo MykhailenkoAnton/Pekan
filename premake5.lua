@@ -14,8 +14,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Includer dirs relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Pekan/vendor/GLFW/include"
+IncludeDir["Glad"] = "Pekan/vendor/Glad/include"
 
 include "Pekan/vendor/GLFW/"
+include "Pekan/vendor/Glad/"
 
 project "Pekan"
 	location "Pekan"
@@ -39,11 +41,13 @@ project "Pekan"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib",
 	}
 
@@ -56,7 +60,8 @@ project "Pekan"
 		{
 			"PK_PLARFORM_WINDOWS",
 			"PK_BUILD_DLL",
-			"PK_ENABLE_ASSERTS"
+			"PK_ENABLE_ASSERTS",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

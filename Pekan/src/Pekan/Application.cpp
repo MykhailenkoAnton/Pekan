@@ -2,7 +2,7 @@
 #include "Application.h"
 
 #include "Pekan/Log.h"
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 namespace Pekan {
 
@@ -39,8 +39,6 @@ namespace Pekan {
 	{
 		EventDispatcher disptacher(e);
 		disptacher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowCloseEvent));
-
-		PK_CORE_TRACE("{0}", e);
 
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
 		{
