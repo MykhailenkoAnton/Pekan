@@ -20,3 +20,5 @@
 	#define PK_ASSERT(x, ...)
 	#define PK_CORE_ASSERT(x, ...)
 #endif // PK_ENABLE_ASSERTS
+
+#define PK_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)

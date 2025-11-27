@@ -6,8 +6,6 @@
 
 namespace Pekan {
 
-#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
-
 	Application* Application::s_Instance = nullptr;
 
 	Application::Application()
@@ -16,7 +14,7 @@ namespace Pekan {
 		s_Instance = this;
 
 		m_Window = std::unique_ptr<Window>(Window::Greate());
-		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+		m_Window->SetEventCallback(PK_BIND_EVENT_FN(Application::OnEvent));
 	}
 
 	Application::~Application()
@@ -42,7 +40,7 @@ namespace Pekan {
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher disptacher(e);
-		disptacher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowCloseEvent));
+		disptacher.Dispatch<WindowCloseEvent>(PK_BIND_EVENT_FN(Application::OnWindowCloseEvent));
 
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
 		{
