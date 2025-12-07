@@ -57,7 +57,7 @@ project "Pekan"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "Off" --temp fix for CRT dependency
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines
@@ -69,24 +69,19 @@ project "Pekan"
 			"IMGUI_IMPL_OPENGL_LOADER_CUSTOM"
 		}
 
-		postbuildcommands
-		{
-			"{MKDIR} ../bin/" .. outputdir .. "/Sandbox",
-			--("{COPYFILE} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
-			("{COPYFILE} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox/")
-		}
-
 	filter "configurations:Debug"
 		defines "PK_DEBUG"
+		runtime "Debug"
 		symbols "On"
-		--buildoptions { "/MDd" } --temp fix for CRT dependency
 
 	filter "configurations:Release"
 		defines "PK_RELEASE"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "PK_DIST"
+		runtime "Release"
 		optimize "On"
 
 	filter "system:windows"
@@ -121,26 +116,33 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "Off" --temp fix for CRT dependency
+		staticruntime "Off"
 		
-
 		defines
 		{
 			"PK_PLARFORM_WINDOWS",
 			"PK_ENABLE_ASSERTS"
 		}
 
+		postbuildcommands
+		{
+			("{COPYFILE} ../bin/" .. outputdir .. "/Pekan/Pekan.dll" .. " ../bin/" .. outputdir .. "/%{prj.name}")
+		}
+
+
 	filter "configurations:Debug"
 		defines "PK_DEBUG"
+		runtime "Debug"
 		symbols "On"
-		--buildoptions { "/MDd" } --temp fix for CRT dependency
 
 	filter "configurations:Release"
 		defines "PK_RELEASE"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "PK_DIST"
+		runtime "Release"
 		optimize "On"
 
 	filter "system:windows"

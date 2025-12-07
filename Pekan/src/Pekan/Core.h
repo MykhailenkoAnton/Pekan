@@ -10,8 +10,9 @@
 	#error Pekan only support Windows!
 #endif //PK_PLARFORM_WINDOWS
 
-#define BIT(x) (1 << x)
-
+#ifdef PK_DEBUG
+	#define PK_ENABLE_ASSERTS
+#endif
 
 #ifdef PK_ENABLE_ASSERTS
 	#define PK_ASSERT(x, ...) { if(!(x)) { PK_ERROR("Assetrion failed: {0}", __VA_ARGS__); __debugbreak(); } }
@@ -21,4 +22,5 @@
 	#define PK_CORE_ASSERT(x, ...)
 #endif // PK_ENABLE_ASSERTS
 
+#define BIT(x) (1 << x)
 #define PK_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
