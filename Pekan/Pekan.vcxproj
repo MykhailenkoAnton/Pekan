@@ -155,12 +155,14 @@
     <ClInclude Include="src\Pekan\Events\KeyEvent.h" />
     <ClInclude Include="src\Pekan\Events\MouseEvent.h" />
     <ClInclude Include="src\Pekan\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Pekan\Input.h" />
     <ClInclude Include="src\Pekan\Layer.h" />
     <ClInclude Include="src\Pekan\LayerStack.h" />
     <ClInclude Include="src\Pekan\Log.h" />
     <ClInclude Include="src\Pekan\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLLoader.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\pkpch.h" />
   </ItemGroup>
@@ -171,6 +173,7 @@
     <ClCompile Include="src\Pekan\LayerStack.cpp" />
     <ClCompile Include="src\Pekan\Log.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\pkpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

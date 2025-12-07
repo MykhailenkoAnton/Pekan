@@ -1,5 +1,6 @@
 #include "pkpch.h"
 #include "Application.h"
+#include "Input.h"
 
 #include "Pekan/Log.h"
 #include <glad/glad.h>
@@ -32,6 +33,9 @@ namespace Pekan {
 			{
 				layer->OnUpdate();
 			}
+
+			auto [x, y] = Input::GetMousePosition();
+			PK_CORE_TRACE("{0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		}
