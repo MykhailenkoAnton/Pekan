@@ -8,6 +8,8 @@ workspace "Pekan"
 		"Dist"
 	}
 
+	startproject "Sandbox"
+
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
@@ -17,9 +19,12 @@ IncludeDir["GLFW"] = "Pekan/vendor/GLFW/include"
 IncludeDir["Glad"] = "Pekan/vendor/Glad/include"
 IncludeDir["ImGui"] = "Pekan/vendor/imgui"
 
-include "Pekan/vendor/GLFW/"
-include "Pekan/vendor/Glad/"
-include "Pekan/vendor/imgui/"
+group "Dependencies"
+	include "Pekan/vendor/GLFW/"
+	include "Pekan/vendor/Glad/"
+	include "Pekan/vendor/imgui/"
+group "" --Dependencies
+
 
 project "Pekan"
 	location "Pekan"
