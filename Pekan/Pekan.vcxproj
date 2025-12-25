@@ -156,9 +156,11 @@
     <ClInclude Include="src\Pekan\Events\MouseEvent.h" />
     <ClInclude Include="src\Pekan\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Pekan\Input.h" />
+    <ClInclude Include="src\Pekan\KeyCodes.h" />
     <ClInclude Include="src\Pekan\Layer.h" />
     <ClInclude Include="src\Pekan\LayerStack.h" />
     <ClInclude Include="src\Pekan\Log.h" />
+    <ClInclude Include="src\Pekan\MouseButtonCodes.h" />
     <ClInclude Include="src\Pekan\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLLoader.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />

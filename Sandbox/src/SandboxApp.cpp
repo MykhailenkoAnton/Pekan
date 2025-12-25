@@ -14,12 +14,22 @@ public:
 
 	void OnUpdate() override
 	{
-		PK_INFO("ExampleLayer::OnUpdate");
+		if (Pekan::Input::IsKeyPressed(PK_KEY_TAB))
+		{
+			PK_TRACE("Key tab is pressed (poll)");
+		}
 	}
 
 	void OnEvent(Pekan::Event& e) override
 	{
-		PK_TRACE("{0}", e);
+		if (e.GetEventType() == Pekan::EventType::KeyPressed)
+		{
+			const Pekan::KeyPressedEvent& kpe = (Pekan::KeyPressedEvent&) e;
+			if (kpe.GetKeyCode() == PK_KEY_TAB)
+			{
+				PK_TRACE("Key tab is pressed (event)");
+			}
+		}
 	}
 };
 
