@@ -18,6 +18,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Pekan/vendor/GLFW/include"
 IncludeDir["Glad"] = "Pekan/vendor/Glad/include"
 IncludeDir["ImGui"] = "Pekan/vendor/imgui"
+IncludeDir["glm"] = "Pekan/vendor/glm"
 
 group "Dependencies"
 	include "Pekan/vendor/GLFW/"
@@ -38,6 +39,8 @@ project "Pekan"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	pchheader "pkpch.h"
@@ -50,6 +53,7 @@ project "Pekan"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}",
 	}
 
 	links
@@ -111,7 +115,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Pekan/vendor/spdlog/include",
-		"Pekan/src"
+		"Pekan/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links
