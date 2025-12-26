@@ -74,8 +74,7 @@ project "Pekan"
 			"PK_PLARFORM_WINDOWS",
 			"PK_BUILD_DLL",
 			"PK_ENABLE_ASSERTS",
-			"GLFW_INCLUDE_NONE",
-			"IMGUI_IMPL_OPENGL_LOADER_CUSTOM"
+			"GLFW_INCLUDE_NONE"
 		}
 
 	filter "configurations:Debug"

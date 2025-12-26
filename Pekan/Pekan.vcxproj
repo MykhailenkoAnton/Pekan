@@ -79,7 +79,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pkpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>PK_PLARFORM_WINDOWS;PK_BUILD_DLL;PK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;PK_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PK_PLARFORM_WINDOWS;PK_BUILD_DLL;PK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;PK_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -100,7 +100,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pkpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>PK_PLARFORM_WINDOWS;PK_BUILD_DLL;PK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;PK_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PK_PLARFORM_WINDOWS;PK_BUILD_DLL;PK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;PK_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -125,7 +125,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pkpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>PK_PLARFORM_WINDOWS;PK_BUILD_DLL;PK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;PK_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PK_PLARFORM_WINDOWS;PK_BUILD_DLL;PK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;PK_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -162,8 +162,6 @@
     <ClInclude Include="src\Pekan\Log.h" />
     <ClInclude Include="src\Pekan\MouseButtonCodes.h" />
     <ClInclude Include="src\Pekan\Window.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLLoader.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\pkpch.h" />
@@ -589,11 +587,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pekan\Application.cpp" />
+    <ClCompile Include="src\Pekan\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Pekan\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Pekan\Layer.cpp" />
     <ClCompile Include="src\Pekan\LayerStack.cpp" />
     <ClCompile Include="src\Pekan\Log.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\pkpch.cpp">

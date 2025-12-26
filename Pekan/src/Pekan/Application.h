@@ -4,10 +4,10 @@
 #include "Window.h"
 #include "Events/Event.h"
 #include "Pekan/Events/ApplicationEvent.h"
-
 #include "Pekan/LayerStack.h"
-
 #include "Pekan/Layer.h"
+
+#include "Pekan/ImGui/ImGuiLayer.h"
 
 namespace Pekan {
 	
@@ -32,6 +32,7 @@ namespace Pekan {
 
 	private:
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 
 		LayerStack m_LayerStack;

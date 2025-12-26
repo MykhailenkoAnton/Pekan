@@ -1,10 +1,11 @@
 #include "pkpch.h"
+#include <glad/glad.h>
 #include "WindowsWindow.h"
 #include "Pekan/Events/ApplicationEvent.h"
 #include "Pekan/Events/MouseEvent.h"
 #include "Pekan/Events/KeyEvent.h"
 
-#include <glad/glad.h>
+
 
 namespace Pekan {
 

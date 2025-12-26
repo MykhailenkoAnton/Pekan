@@ -39,7 +39,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Pekan::ImGuiLayer());
 	}
 
 	~Sandbox()
